@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>修改中心动态界面</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="contant">
+        <div class="row">
+                <table >
+                    <div class='panel'>
+                        <div id='p_body'>
+                            <tr>
+                                <td><span>修改中心动态</span></td>
+                            </tr>
+                                <span>通知名称：</span>
+                                <input type="text" name="newid"  id = "newid" value = "<{$data.id}>" hidden/>
+                                <input type="text" name="newtitle" id = "newtitle" value="<{$data.newtitle}>" width="200px" /> <br> 
+                                <span>原作者</span>
+                                <input type="text" name="oldauthor" id = "oldauthor" value="<{$data.oldauthor}>" width="200px" /> <br>  
+                                <span>作　者</span>
+                                <input type="text" name="newauthor" id = "newauthor" value="<{$data.newauthor}>" width="200px" /> <br>  
+                                <!-- 初始化内容 -->
+                                <script id='container' name='newcontent' type="text/plain" style="height:500px;width:1300px"><{$data.newcontent}></script>
+                                <button id="getContent">获取内容</button>
+                                <button id="saveContent">修改</button>
+                                <script src="__ROOT__/Public/Js/jquery-3.1.1.min.js"></script>
+                                <!--配置文件-->
+                                <script type="text/javascript" src="__PUBLIC__/Ueditor/ueditor.config.js"></script>
+                                <!--编译器源码文件-->
+                                <script type="text/javascript" src="__PUBLIC__/Ueditor/ueditor.all.js"></script>
+                                <!--实例化编译器-->
+                                <script type="text/javascript">
+                                    $(function(){
+                                        var ue = UE.getEditor('container');
+                                        $('#getContent').click(function(){
+                                            var html = ue.getContent();
+                                            alert(html);
+                                        });
+
+                                        $('#saveContent').click(function(){
+                                            var html = ue.getContent();
+                                           	var myid = $("#idInfor").val();
+                                            var param = {
+                                            	id: $("#newid").val(),
+                                                oldauthor: $("#oldauthor").val(),
+                                                newauthor: $("#newauthor").val(),
+                                                newtitle: $("#newtitle").val(),
+                                                newcontent: html
+                                            };
+                                            $.ajax({
+                                                url: '__URL__/newsDoUpdate',
+                                                type: 'POST',
+                                                dataType: 'json',
+                                                data: param,
+                                                success: function(data){
+                                                    console.log(data);
+                                                    window.location.href="__APP__/Admin/Index/index";
+                                                },
+                                                error: function(xhr){
+                                                    console.log(xhr);
+                                                }
+                                            });
+                                            
+                                        });
+                                    });
+                                </script>
+
+                        <!-- 
+                                <div id="buttom" ><button type="submit"value="提交" />提交</button></div>
+                             -->
+                        </div>
+                    </div>
+                </div>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

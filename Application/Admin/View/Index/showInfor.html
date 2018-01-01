@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>新闻通知具体展示</title>
+</head>
+<body>
+	<font color="#777777"><strong>用户名称：</strong></font>
+    <table >
+        <div class='panel'>
+            <thead>
+            </thead>
+            <td><a href="__URL__/index"><div id="buttom" ><button>返回</button></div></a></form></td>
+            <volist name = "data" id = "vo">
+                <div id='p_body'>
+                    <tr>
+                        <td><h2><a href="__URL__/itemsInfor/id/<{$vo.id}>"><{$vo.inforname}></a></h2></td>
+                    </tr>
+                    <tr>
+                    	<td><p><{$vo.infortime}></p></td>
+                    </tr>
+                    <tr>
+                        <td><a href="__URL__/updateInfor/id/<{$vo.id}>">修改</a></td>
+                        <td><a href="__URL__/deleteInfor/id/<{$vo.id}>">删除</a></td>
+                    </tr>
+                </div>
+            </volist>
+        </div>
+    </table>
+</body>
+</html>

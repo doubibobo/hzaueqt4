@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>华中农业大学作物学实验教学中心</title>
+  <link type="text/css" rel="stylesheet" href='http://fonts.googleapis.com/css?family=Ubuntu:300italic,300,700' />
+  <link rel="shortcut icon" href="__ROOT__/logo.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="__PUBLIC__/face/css/home_public.css" />
+  <link rel="stylesheet" href="__PUBLIC__/face/css/show_public.css" />
+  <link rel="stylesheet" href="__PUBLIC__/face/css/pit_public.css" />
+  <link rel="stylesheet" href="__PUBLIC__/Css/bootstrap.css"/>
+  <script type="text/javascript" src="__PUBLIC__/public/js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<div id="wrapper">
+  
+  <!--************************************************************** header **************************************************************-->
+  <div id="header"> 
+    <include file="./Application/Home/View/Public/header.html" />
+  </div>
+
+  <!--**************************************************************   nav  **************************************************************-->
+  <div id="nav">
+    <include file="./Application/Home/View/Public/nav.html" />
+  </div>
+  
+   <!--**************************************************************  main **************************************************************-->
+  <div id="main">
+    <div class="container">
+      <div id="blank"></div>
+      <div id="main_nav">
+        <section>
+          <h3>美图欣赏</h3>
+          <ul class="ultop">
+            <li><a href="__URL__/beautiful1">实验图库</a>
+              <!--  class="ulhidde" -->
+                <!-- <ul>
+                  <li><a href="">作物学</a></li>
+                  <li><a href="">昆虫学</a></li>
+                  <li><a href="">病理学</a></li>
+                </ul> -->
+            </li>
+            <li><a href="__URL__/beautiful2">实践瞬间</a></li>
+            <li><a href="__URL__/beautiful3">田间掠影</a></li>
+            <li><a href="__URL__/beautiful4">其他美图</a></li>
+          </ul>
+        </section>
+      </div>
+      <div id="main_right">
+        <nav class="top_nav"><a href="__APP__/home/Index/index.html">首页</a> · <a href="#"><{$value}></a></nav>
+        <header class="main_title"><h2><{$value}></h2></header>
+        <section class="main_list">
+          <div class="pitmainbox">
+            <volist name="data" id="vo">
+              <div class="pitbox">
+                <img style="width: 100%; display: block;" src="__ROOT__/Uploads/<{$vo.imgadd}>" alt="" />
+                <div class="explan"></div>
+              </div>
+            </volist>
+          </div>
+          <div>
+            <nav style="text-align:center;" >
+              <ul class="pagination">
+                <{$show}>
+              </ul>
+            </nav>
+          </div>
+        </section>
+        <!-- ******************弹出框****************** -->
+        <div class="alert_box">
+          <a href="javascript:void(0)" title="Close" class="alert_box_close_btn" >×</a>
+          <img src="__PUBLIC__/face/images/eqt/1.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+   <!--************************************************************** footer **************************************************************-->
+  <div id="footer">
+     <include file="./Application/Home/View/Public/footer.html" />
+  </div>
+</div>
+  <script type="text/javascript" src="__PUBLIC__/face/js/jquery_homepage.js"></script>
+  <script type="text/javascript" src="__PUBLIC__/face/js/pit_public.js"></script>
+ 
+</body>
+</html>

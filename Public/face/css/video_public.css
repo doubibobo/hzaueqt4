@@ -1,0 +1,66 @@
+.video_con_box{
+	overflow: hidden;
+	background: #F1F2F3;
+	float: left;
+	margin: 5px 28px 20px 0;
+	box-shadow: 0 0 8px 1px rgba(0,0,0,0.1);
+}
+.video_con_box:hover{
+	box-shadow: 0 0 8px 1px rgba(0,0,0,0.12);
+	-webkit-transition: all 0.5s ease 0;
+	-moz-transition: all 0.5s ease 0;
+	-ms-transition: all 0.5s ease 0;
+	-o-transition: all 0.5s ease 0;
+	transition: all 0.5s ease 0;
+}
+.video_con_box,
+.video_thumb,
+.video_thumb img{
+	width: 200px;
+}
+.video_thumb,
+.video_thumb img{
+	height: 110px;
+}
+.video_thumb{
+	position: relative;
+}
+.video_thumb a{
+	color: #fff;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    text-decoration: none;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+}
+.video_thumb:hover a{
+    background-color: rgba(0,0,0,0.3)!important;
+    filter:Alpha(opacity=30);
+    -webkit-transition: background-color 0.5s;
+	-moz-transition: background-color 0.5s;
+	-ms-transition: background-color 0.5s;
+	-o-transition: background-color 0.5s;
+	transition: background-color 0.5s;
+	background:url(../images/player.png) no-repeat 50% 50%;
+	background-size: 50px;
+
+}
+.video_title_box{
+	background: #fff;
+    padding: 5px 0 7px;
+}
+.video_title{	
+	height: 42px;
+    line-height: 18px;
+    overflow: hidden;
+    padding: 3px 10px 8px 10px;
+}
+.video_title a{
+	color: #555;
+    font-size: 13px;
+}
+.video_title a:hover{
+	color: #ff3c00;
+}
