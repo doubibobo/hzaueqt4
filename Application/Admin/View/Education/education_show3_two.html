@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>华中农业大学作物学实验教学中心</title>
+
+    <link rel="shortcut icon" href="__ROOT__/back.ico" type="image/x-icon" />
+    <!-- Bootstrap -->
+    <link href="__PUBLIC__/back/include/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 图标引入 -->
+    <link href="__PUBLIC__/back/include/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- to DO list的对勾 -->
+    <link href="__PUBLIC__/back/include/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="__PUBLIC__/back/include/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- Datatables -->
+    <link href="__PUBLIC__/back/include/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="__PUBLIC__/back/css/custom.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/back/css/public.css" rel="stylesheet" >
+</head>
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <!--************************************************* 左导航 *************************************************-->
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            
+        <!-- 左导航中部 -->
+            <include file="./Application/Admin/View/Public/nav_header.html" />
+              <br />
+
+              <!-- 左导航中部 -->
+            <include file="./Application/Admin/View/Public/nav_middle.html" />
+
+              <!--  左导航底部 -->
+              <include file="./Application/Admin/View/Public/nav_footer.html" />
+
+          </div>
+        </div>
+
+        <!--************************************************* 顶导航 *************************************************-->
+        <include file="./Application/Admin/View/Public/top_nav.html" />
+      
+
+        <!--************************************************* 左内容 *************************************************-->
+        <div class="right_col" role="main">
+          <div class="page-title">
+              <div class="title_left">
+                <h3>课程课表 </h3>
+              </div>
+          </div>
+          <div class="col-md-6 col-sm-12 col-xs-12">
+                  <div class="x_panel">
+                    <div class="x_title">
+                      <h2>具体课程</h2>
+                      <ul class="nav navbar-right panel_toolbox">
+                        <li class="panel_toolbox_li"><a class="close-link"><i class="fa fa-close"></i></a>
+                        </li>
+                        <li class="panel_toolbox_li"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                      </ul>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">    
+                      <div class="myinflue">
+                        <p style="color:red;">* 此表格为所有课程</p>        
+                        <table id="datatable" class="table table-striped table-bordered">
+                          <thead>
+                            <tr>
+                              <th>Title</th>
+                              <th style="width:35%;">operation</th>
+                            </tr>
+                          </thead>
+
+
+                          <tbody>
+                            <volist name="data" id="vo">
+                              <tr>
+                                <td><a href="__APP__/Admin/Education/education_show3_one_update/id/<{$vo.id}>"><{$vo.c_name}></a></td>
+                                <td>
+                                  <a href="__APP__/Admin/Education/education_show3_one_update/id/<{$vo.id}>" >Edit
+                                    <i class="fa fa-pencil"></i>
+                                  </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  <a href="__APP__/Admin/Education/deleteACourse/id/<{$vo.id}>" >Delete
+                                    <i class="fa fa-close"></i>
+                                  </a>
+                                </td>
+                              </tr>
+                            </volist>
+                          </tbody>
+                        </table>
+                        <br><br>
+                        <div  data-toggle="modal" data-target="#myModal"class="gallery_add">ADD</div>
+                        </div>
+                    </div>
+                  </div>
+          </div>
+
+          <div class="col-md-6 col-sm-12 col-xs-12">
+                  <div class="x_panel">
+                    <div class="x_title">
+                      <h2>课程分类 </h2>
+                      <ul class="nav navbar-right panel_toolbox">
+                        <li class="panel_toolbox_li"><a class="close-link"><i class="fa fa-close"></i></a>
+                        </li>
+                        <li class="panel_toolbox_li"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                      </ul>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">    
+                      <div class="myinflue">
+                        <form class="EduForm" action="__URL__/addCourseTy" method="post">
+                          <input type="text" name="hahah" value="1" hidden>
+                          <input type="text" name="ty" value="1" hidden>
+                          <input type="text" placeholder="请填写分类名称" name="courseName">
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                        <p style="color:red;">* 此表格为所有分类名称</p>        
+                        <table id="datatable-fixed-header" class="table table-striped table-bordered">
+                          <thead>
+                            <tr>
+                              <th>Title</th>
+                              <th style="width:25%;">operation</th>
+                            </tr>
+                          </thead>
+
+
+                          <tbody>
+                            <volist name="data1" id="vo">
+                              <tr>
+                                <td><{$vo.t_name}></td>
+                                <td><a href="__URL__/deleteTheType/id/<{$vo.id}>" >Delete <i class="fa fa-close"></i></a></td>
+                              </tr>
+                            </volist>
+                          </tbody>
+                        </table>
+                       
+                    </div>
+                  </div>
+          </div>
+        
+        </div>
+        <!-- 模态框（Modal）添加 -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                  &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                  添加具体课程
+                </h4>
+              </div>
+              <div class="modal-body">
+
+                <select style="margin:0 0 10px 0;" name="ct" id="idInfor">
+                  <volist name="data1" id="vo">
+                    <option value ="<{$vo.id}>"><{$vo.t_name}></option>
+                  </volist>
+                </select>
+                <input type="text" class="gallery_title" id="gallery_title" name="gallery_title" placeholder="Fill in the course, please">
+                <script id='container' style="min-height:200px;" name='content' type="text/plain">此处填写文章内容</script>
+                <script src="__PUBLIC__/Js/jquery-3.1.1.min.js"></script>
+                <!--配置文件-->
+                <script type="text/javascript" src="__PUBLIC__/Ueditor/ueditor.config.js">
+                </script>
+                <!--编译器源码文件-->
+                <script type="text/javascript" src="__PUBLIC__/Ueditor/ueditor.all.js">
+                </script>
+                <!--实例化编译器-->
+
+
+              </div>
+              <div class="modal-footer">
+               
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" id="saveContent" class="btn btn-primary">Submit</button>
+                <script type="text/javascript">
+                    $(function () {
+                        var ue=UE.getEditor ('container');
+                        $('#saveContent').click(function () {
+                            var html = ue.getContent();
+                            var param = {
+                                ct:$('#idInfor').val(),
+                                gallery_title: $('#gallery_title').val(),
+                                content:html
+                            };
+                            $.ajax({
+                                url: '__URL__/addCourse',
+                                type: 'POST',
+                                dataType: 'json',
+                                data: param,
+                                success: function(data){
+                                    console.log(data);
+                                    window.location.href="__URL__/education_show3_two";
+                                },
+                                error: function(xhr){
+                                    alert("失败");
+                                    console.log(xhr);
+                                }
+                            });
+                        });
+                    });
+                </script><br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--************************************************* 底部版权 *************************************************-->
+        <include file="./Application/Admin/View/Public/footer.html" />
+
+      </div>
+    </div>
+
+    <!--************************************************* publc JS *************************************************-->
+    <include file="./Application/Admin/View/Public/public_js.html" />  
+    <script src="__PUBLIC__/back/include/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="__PUBLIC__/back/include/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+  </body>
+</html>

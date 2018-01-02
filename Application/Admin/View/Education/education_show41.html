@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>华中农业大学作物学实验教学中心</title>
+
+    <link rel="shortcut icon" href="__ROOT__/back.ico" type="image/x-icon" />
+    <!-- Bootstrap -->
+    <link href="__PUBLIC__/back/include/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 图标引入 -->
+    <link href="__PUBLIC__/back/include/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- to DO list的对勾 -->
+    <link href="__PUBLIC__/back/include/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="__PUBLIC__/back/include/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- Datatables -->
+    <link href="__PUBLIC__/back/include/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="__PUBLIC__/back/css/custom.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/back/css/public.css" rel="stylesheet" >
+</head>
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <!--************************************************* 左导航 *************************************************-->
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            
+        <!-- 左导航中部 -->
+            <include file="./Application/Admin/View/Public/nav_header.html" />
+              <br />
+
+              <!-- 左导航中部 -->
+            <include file="./Application/Admin/View/Public/nav_middle.html" />
+
+              <!--  左导航底部 -->
+              <include file="./Application/Admin/View/Public/nav_footer.html" />
+
+          </div>
+        </div>
+
+        <!--************************************************* 顶导航 *************************************************-->
+        <include file="./Application/Admin/View/Public/top_nav.html" />
+      
+
+        <!--************************************************* 左内容 *************************************************-->
+        <div class="right_col" role="main">
+          <div class="page-title">
+              <div class="title_left">
+                <h3><{$data}> </h3>
+              </div>
+          </div>
+          <div class="col-md-6 col-sm-12 col-xs-12">
+                  <div class="x_panel">
+                    <div class="x_title">
+                      <h2>具体课程</h2>
+                      <ul class="nav navbar-right panel_toolbox">
+                        <li class="panel_toolbox_li"><a class="close-link"><i class="fa fa-close"></i></a>
+                        </li>
+                        <li class="panel_toolbox_li"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                      </ul>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">    
+                      <div class="myinflue">
+                        <php>
+                          if ($data == "试验区课表") {
+                            $theType = 0;
+                          } else {
+                            $theType = 1;
+                          }
+                        </php>
+                        <div class="row">
+                        <form class="form-inline" action="__URL__/addACourse" method="post">
+                            <input type="text" name="theType" value="<{$theType}>" class="col-md-1" hidden>
+                            <div class="form-group col-md-3">
+                              <select class="form-control col-md-3" name="coursetp">
+                                <volist name="allCoursetp" id="hahaha">
+                                  <option value="<{$hahaha.id}>"><{$hahaha.t_name}></option>
+                                </volist>
+                              </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                              <select class="form-control col-md-3" name="courseStatus">
+                                <option value="0">
+                                  非在授课程
+                                </option>
+                                <option value="1">
+                                  在授课程
+                                </option>
+                              </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                              <input type="text" name="coursename" placeholder="请填写课程名称" class="form-control col-md-3">
+                            </div>
+                            <div class="form-group col-md-1">
+                              <button type="submit" class="btn btn-primary form-control">添加</button>
+                            </div>
+                        </form>
+                        </div>
+                        <p style="color:red;">* 此表格为所有课程；先在本页面添加课程名，再点击课程名称编辑其具体信息。</p>        
+                        <table id="datatable" class="table table-striped table-bordered">
+                          <thead>
+                            <tr>
+                              <th>课程名称</th>
+                              <th style="width:35%;">操作</th>
+                            </tr>
+                          </thead>
+
+
+                          <tbody>
+                            <volist name="allCourse" id="vo"> 
+                              <volist name="vo['allcourse']" id="items">
+                                <tr>
+                                  <td><a href="__APP__/Admin/Education/education_show4_1/id/<{$items.id}>"><{$items.c_name}></a></td>
+                                  <td><a href="__APP__/Admin/Education/education_show4_1/id/<{$items.id}>" >编辑 <i class="fa fa-pencil"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="__URL__/deleteCourse/id/<{$items.id}>" >删除 <i class="fa fa-close"></i></a></td>
+                                </tr>
+                              </volist>
+                            </volist>
+                            <volist name="allmanyCourse" id="items">
+                              <tr>
+                                <td><a href="__APP__/Admin/Education/education_show4_1/id/<{$items.id}>"><{$items.c_name}></a></td>
+                                <td><a href="__APP__/Admin/Education/education_show4_1/id/<{$items.id}>" >编辑 <i class="fa fa-pencil"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="__URL__/deleteCourse/id/<{$items.id}>" >删除 <i class="fa fa-close"></i></a></td>
+                              </tr>
+                            </volist>
+                          </tbody>
+                        </table>
+                        <br><br>
+                        <div style="display:none;" class="gallery_add"></div>
+                        </div>
+                    </div>
+                  </div>
+          </div>
+
+          <div class="col-md-6 col-sm-12 col-xs-12">
+                  <div class="x_panel">
+                    <div class="x_title">
+                      <h2>课程分类 </h2>
+                      <ul class="nav navbar-right panel_toolbox">
+                        <li class="panel_toolbox_li"><a class="close-link"><i class="fa fa-close"></i></a>
+                        </li>
+                        <li class="panel_toolbox_li"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                      </ul>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">    
+                      <div class="myinflue">
+                        <form class="form-inline" action="__URL__/addCoursetp" method="post">
+                          <select class="form-control col-md-3" name="coursetp">
+                              <option value="0">试验区课表</option>
+                              <option value="1">课程课表</option>
+                          </select>
+                          <input type="text" name="theType" value="<{$theType}>" hidden>
+                          <input type="text" name="coursename" placeholder="请填写分类名称" class="form-control col-md-3">
+                          <button type="submit" class="btn btn-primary">添加</button>
+                        </form>
+                        <p style="color:red;">* 此表格为所有分类名称</p>        
+                        <table id="datatable-fixed-header" class="table table-striped table-bordered">
+                          <thead>
+                            <tr>
+                              <th>大类名称</th>
+                              <th style="width:25%;">操作</th>
+                            </tr>
+                          </thead>
+
+
+                          <tbody>
+                            <volist name="allCoursetp" id="items">
+                              <tr>
+                                <td><{$items.t_name}></td>
+                                <td><a href="__URL__/deleteCoursetp/id/<{$items.id}>" >删除 <i class="fa fa-close"></i></a></td>
+                              </tr>
+                            </volist>
+                          </tbody>
+                        </table>
+                       
+                    </div>
+                  </div>
+          </div>
+        
+        </div>
+       
+        <!--************************************************* 底部版权 *************************************************-->
+        <include file="./Application/Admin/View/Public/footer.html" />
+
+      </div>
+    </div>
+
+    <!--************************************************* publc JS *************************************************-->
+    <include file="./Application/Admin/View/Public/public_js.html" />  
+    <script src="__PUBLIC__/back/include/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="__PUBLIC__/back/include/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+  </body>
+</html>

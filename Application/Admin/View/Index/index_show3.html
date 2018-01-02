@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ 	<title>华中农业大学作物学实验教学中心</title>
+
+  	<link rel="shortcut icon" href="__ROOT__/back.ico" type="image/x-icon" />
+	<!-- Bootstrap -->
+    <link href="__PUBLIC__/back/include/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 图标引入 -->
+    <link href="__PUBLIC__/back/include/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="__PUBLIC__/back/include/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="__PUBLIC__/back/css/custom.min.css" rel="stylesheet">
+	<link href="__PUBLIC__/back/css/public.css" rel="stylesheet" >
+
+</head>
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+      	<!--************************************************* 左导航 *************************************************-->
+        <div class="col-md-3 left_col">
+	        <div class="left_col scroll-view">
+	          
+				<!-- 左导航中部 -->
+	         	<include file="./Application/Admin/View/Public/nav_header.html" />
+	            <br />
+
+	            <!-- 左导航中部 -->
+	         	<include file="./Application/Admin/View/Public/nav_middle.html" />
+
+	            <!--  左导航底部 -->
+	          	<include file="./Application/Admin/View/Public/nav_footer.html" />
+
+	        </div>
+        </div>
+
+        <!--************************************************* 顶导航 *************************************************-->
+        <include file="./Application/Admin/View/Public/top_nav.html" />
+      
+
+        <!--************************************************* 左内容 *************************************************-->
+        <div class="right_col" role="main" >
+
+            <div class="col-md-12 col-sm-6 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>实验图库 <small>Experiment Picture</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      
+                     
+                      <li class="panel_toolbox_li"><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                      <li class="panel_toolbox_li"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <div class="row">
+                      <volist name="data1" id="vo">
+                        <div class="col-md-55">
+                          <div class="thumbnail2">
+                            <div class="image view view-first">
+
+                              <img style="width: 100%; display: block;" src="__ROOT__/Uploads/<{$vo.imgadd}>" alt="image" />
+                              <div class="mask">
+                                <input type="text" name="theId" value="<{$vo.id}>" hidden>
+                                <p><{$vo.imgname}></p>
+                                <div class="tools tools-bottom">
+                                  <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil"></i></a>
+                                  <a href="__URL__/imgDelete/id/<{$vo.id}>/ty/<{$vo.type}>"><i class="fa fa-times"></i></a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </volist>
+
+                      <p class="ye">上一页/下一页</p>
+                      
+                    </div>
+                    <div class="file_input_pot">
+                      <form action="__URL__/addImagic" method="post" enctype="multipart/form-data">
+                        <input type="text" name="ty" value="5" hidden>
+                        <input type="text" name="gallery_title" placeholder="图片名称" >
+                        <input type="text" name="gallery_textarea" value="123" hidden>
+                        <input class="file" type="file" name="gallery_file">
+                        <input class="btn btn-primary" type="submit" value="添加">
+                      </form>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+
+          <div class="col-md-12 col-sm-6 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>实践瞬间 <small>Practice Moment</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      
+                     
+                      <li class="panel_toolbox_li"><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                      <li class="panel_toolbox_li"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+                    <div class="row">
+                      <volist name="data2" id="vo">
+                        <div class="col-md-55">
+                          <div class="thumbnail2">
+                            <div class="image view view-first">
+                              <img style="width: 100%; display: block;" src="__ROOT__/Uploads/<{$vo.imgadd}>" alt="image" />
+                              <div class="mask">
+                                <input type="text" name="theId" value="<{$vo.id}>" hidden>
+                                <p><{$vo.imgname}></p>        
+                                <div class="tools tools-bottom">
+                                  <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil"></i></a>
+
+                                  <a href="__URL__/imgDelete/id/<{$vo.id}>/ty/<{$vo.type}>"><i class="fa fa-times"></i></a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </volist>
+
+                      <p class="ye">上一页/下一页</p>
+                    </div>
+                    <div class="file_input_pot">
+                      <form action="__URL__/addImagic" method="post" enctype="multipart/form-data">
+                        <input type="text" name="ty" value="6" hidden>
+                        <input type="text" name="gallery_title" placeholder="图片名称" >
+                        <input type="text" name="gallery_textarea" value="123" hidden>
+                        <input class="file" type="file" name="gallery_file">
+                        <input class="btn btn-primary" type="submit" value="添加">
+                      </form>
+                    </div>
+                  </div>
+                </div>
+          </div>
+
+          <div class="col-md-12 col-sm-6 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>田间掠影 <small>Field Picture</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      
+                     
+                      <li class="panel_toolbox_li"><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                      <li class="panel_toolbox_li"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+                    <div class="row">
+                      <volist name="data3" id="vo">
+                        <div class="col-md-55">
+                          <div class="thumbnail2">
+                            <div class="image view view-first">
+                              <img style="width: 100%; display: block;" src="__ROOT__/Uploads/<{$vo.imgadd}>" alt="image" />
+                              <div class="mask">
+                                <input type="text" name="theId" value="<{$vo.id}>" hidden>
+                                <p><{$vo.imgname}></p>
+                                <div class="tools tools-bottom">
+                                  <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil"></i></a>
+
+                                  <a href="__URL__/imgDelete/id/<{$vo.id}>/ty/<{$vo.type}>"><i class="fa fa-times"></i></a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </volist>
+
+                      <p class="ye">上一页/下一页</p>
+                    </div>
+                    <div class="file_input_pot">
+                      <form action="__URL__/addImagic" method="post" enctype="multipart/form-data">
+                        <input type="text" name="ty" value="7" hidden>
+                        <input type="text" name="gallery_title" placeholder="图片名称">
+                        <input type="text" name="gallery_textarea" value="123" hidden>
+                        <input class="file" type="file" name="gallery_file">
+                        <input class="btn btn-primary" type="submit" value="添加">
+                      </form>
+                    </div>
+                  </div>
+                </div>
+          </div>
+
+          <div class="col-md-12 col-sm-6 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>其它美图 <small>Other Picture</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      
+                     
+                      <li class="panel_toolbox_li"><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                      <li class="panel_toolbox_li"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+                    <div class="row">
+                      <volist name="data4" id="vo">
+                        <div class="col-md-55">
+                          <div class="thumbnail2">
+                            <div class="image view view-first">
+                              <img style="width: 100%; display: block;" src="__ROOT__/Uploads/<{$vo.imgadd}>" alt="image" />
+                              <div class="mask">
+                                <input type="text" name="theId" value="<{$vo.id}>" hidden>
+                                <p><{$vo.imgname}></p>
+                                <div class="tools tools-bottom">
+                                  <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil"></i></a>
+                                  
+                                  <a href="__URL__/imgDelete/id/<{$vo.id}>/ty/<{$vo.type}>"><i class="fa fa-times"></i></a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </volist>
+
+                      <p class="ye">上一页/下一页</p>
+                    </div>
+                    <div class="file_input_pot">
+                        <form action="__URL__/addImagic" method="post" enctype="multipart/form-data">
+                          <input type="text" name="ty" value="8" hidden>
+                          <input type="text" name="gallery_title" placeholder="图片名称">
+                          <input type="text" name="gallery_textarea" value="123" hidden>
+                          <input class="lefile" type="file" name="gallery_file">
+                          <input type="submit" class="btn btn-primary" value="添加">
+                        </form>
+                      </div>
+                  </div>
+                </div>
+          </div>
+        </div>
+
+
+
+          <!-- 模态框（Modal）编辑 -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                  </button>
+                  <h4 class="modal-title" id="myModalLabel">
+                    Picture Gallery
+                  </h4>
+                </div>
+                <div class="modal-body">
+                  
+                  <form class="form" action="__URL__/imgEdit4" method="post">
+                    <input type="text" class="gallery_id" name="id" value="<{$vo.id}>" hidden>
+                    <input type="text" class="gallery_title" name="gallery_title" value="<{$vo.imgname}>" placeholder="Fill in the title, please">
+                    <!-- <textarea name="gallery_textarea" cols="90" rows="5" class="gallery_textarea" id="gallery_textarea" ><{$vo.imgintro}></textarea> -->
+                    <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                          <button type="submit" class="btn btn-primary">修改</button>
+                    </div>
+                  </form>
+
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+          </div>
+
+        <!--************************************************* 底部版权 *************************************************-->
+        <include file="./Application/Admin/View/Public/footer.html" />
+
+      </div>
+    </div>
+
+
+    <!--************************************************* publc JS *************************************************-->
+ 	<include file="./Application/Admin/View/Public/public_js.html" />
+    <!--   图片轮播模态框内容替换 -->
+  <script type="text/javascript">
+  $(".view-first .fa-pencil").on("click",function(){
+      $(".gallery_title").attr('value',$(this).parents().parents().prev().html());
+      // $(".gallery_textarea").html($(this).parents().parents().parents().parents('div').next().children('p').html());
+      $(".gallery_id").attr('value',$(this).parents().parents().prev().prev().val());
+  });
+</script>
+	
+  </body>
+</html>

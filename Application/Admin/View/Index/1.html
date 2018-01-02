@@ -1,0 +1,109 @@
+<!doctype html>
+ <html lang="en">
+ <head>
+ 	<meta charset="UTF-8">
+ 	<title>Admin</title>
+ 	<link rel="stylesheet" href="__PUBLIC__/back/css/index.css">
+	<link rel="stylesheet" href="__PUBLIC__/back/css/component.css" />
+	<script src="__PUBLIC__/public/js/jquery-1.8.3.min.js"></script>
+ </head>
+ <body>
+ 	<div id="st-container" class="st-container">
+		<div class="st-pusher">
+
+			<p>这里是左上角的图片区域</p>
+			<form action = '__URL__/img' method="post" enctype="multipart/form-data">
+				<input type="text" name="type" value = "0" hidden>
+				图片名称：<input type="text" name="imgname"> <br>
+				<input type="file" name="file"> <br>
+				图片介绍：<input type="textarea" name="imgintro"> <br>
+				<button type="submit">提交</button>
+			</form>
+
+			<!-- 后台图片的操作 -->
+			<volist name = "data1" id = "vo">
+				<!-- 这是图片的名字 -->
+				<p>图片名称：<{$vo.imgname}></p> 
+				<!-- 这是图片的介绍 -->
+				<p>图片介绍：<{$vo.imgintro}></p>
+				<img src="__ROOT__/Uploads/<{$vo.imgadd}>" width = "200px" height = "150px"><br><br>
+			</volist>
+
+			<!-- 右上角欢迎关注模块 -->
+			<p>这里是欢迎关注的界面</p>
+			<volist name = "data2" id = "vo">
+				<img src="__ROOT__/Uploads/<{$vo.imgadd}>" width = "200px" height = "150px"> <br><br>
+			</volist>
+			<!-- 右上角欢迎关注的具体操作 -->
+			<form action = '__URL__/img' method="post" enctype="multipart/form-data">
+				<input type="text" name="type" value = "1" hidden>
+				<input type="text" name="imgname" value="" hidden> <br>
+				<input type="file" name="file"> <br>
+				欢迎关注介绍：<input type="textarea" name="imgintro"> <br>
+				<button type="submit">提交</button>
+			</form>
+
+			<p>这里是新闻通知的模块</p>
+			<a href="__URL__/addInfor">写通知</a>
+			<a href="__URL__/showInfor">所有通知</a>
+			<!-- 通知公告的最后十条，可以对条数进行更改 -->
+			<volist name = "data" id = "vo">
+				<p><a href="__URL__/itemsInfor/id/<{$vo.id}>"><{$vo.id}> <{$vo.inforname}> 		<{$vo.infortime}></a></p>
+				<p><a href="__URL__/updateInfor/id/<{$vo.id}>">修改</a> <a href="__URL__/deleteInfor/id/<{$vo.id}>">删除</a></td></p>
+			</volist>
+
+			<div class="st-content"><!-- this is the wrapper for the content -->
+				<div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
+					<div class="main clearfix">
+						<div id="st-trigger-effects" class="column">
+							<div data-effect="st-effect-8">效果八</div>	
+						</div>
+					</div><!-- /main -->
+				</div><!-- /st-content-inner -->
+			</div><!-- /st-content -->
+		</div>
+	</div>
+
+	<!-- 这里是通知动态区域 -->
+	<p>中心动态</p>
+	<a href="__URL__/newsAdd">添加中心动态</a>
+	<volist name = "data5" id = "vo">
+			<h1><a href="__URL__/newsOne/id/<{$vo.id}>"><{$vo.newtitle}></a></h1>
+			<a href="__URL__/newsUpdate/id/<{$vo.id}>">修改</a>
+			<a href="__URL__/newsDelete/id/<{$vo.id}>">删除</a>
+	</volist>
+
+	<!-- 添加链接部分 -->
+	<p>添加链接</p>
+	<form action = "__URL__/addLink" method="post">
+		链接名称： <input type="text" name="linkname" value = ""> <br><br>
+		链接地址： <input type="text" name="linkadd" value = ""> <br><br>
+		链接位置： <input type="radio" name="type" value = "0">校内链接
+					<input type="radio" name="type" value="1">校外链接<br><br>
+		<button type = "submit">添加</button>
+	</form>
+
+	<p>校内链接</p>
+	<volist name = "data3" id = "vo">
+		<{$vo.linkname}>&nbsp;&nbsp;<{$vo.linkadd}>&nbsp;&nbsp;<a href="__URL__/updateLink/id/<{$vo.id}>">修改</a>
+		<a href="__URL__/deleteLink/id/<{$vo.id}>">删除</a>
+	</volist>
+	<p>校外链接</p>
+	<volist name = "data4" id = "vo">
+		<{$vo.linkname}>&nbsp;&nbsp;<{$vo.linkadd}>&nbsp;&nbsp;
+		<form action = "__URL__/updateLink/id/<{$vo.id}>" method="post">
+			链接名称： <input type="text" name="linkname" value = "<{$vo.linkname}>"> <br><br>
+			链接地址： <input type="text" name="linkadd" value = "<{$vo.linkadd}>"> <br><br>
+			链接位置： <input type="radio" name="type" value = "0">校内链接
+						<input type="radio" name="type" value="1">校外链接<br><br>
+			<button type = "submit">修改</button>
+		</form>
+		<a href="__URL__/deleteLink/id/<{$vo.id}>">删除</a>
+	</volist>
+	<!-- 希望的效果是：点击修改，不刷新页面的情况下，出现表单，表单如下 -->
+
+	<script src="__PUBLIC__/back/js/modernizr.custom.js"></script>
+	<script src="__PUBLIC__/back/js/classie.js"></script>
+	<script src="__PUBLIC__/back/js/sidebarEffects.js"></script>
+ </body>
+ </html> 

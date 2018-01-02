@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="__ROOT__/back.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="__PUBLIC__/back/css/reset.css">
+    <link rel="stylesheet" href="__PUBLIC__/back/css/supersized.css">
+    <link rel="stylesheet" href="__PUBLIC__/back/css/loginshow.css">
+
+</head>
+
+<body>
+<div id='wrapper'>
+    <div id="LoginBox">
+        <div class="row1">Log in</div>
+        <form method="post" name="myForm">
+            <p id="suggest"></p>
+            <div class="row">
+                <span class="inputBox">
+                    <input type="text" id="txtName" placeholder="Username" name="admin_name"/>
+                </span><a href="javascript:void(0)" title="提示" class="warning" id="warn">*</a>
+            </div>
+            <div class="row">
+                <span class="inputBox">
+                    <input type="password" id="txtPwd" placeholder="Password" name="password"/>
+                </span><a href="javascript:void(0)" title="提示" class="warning" id="warn2">*</a>
+            </div>
+            <div class="row">
+                <label for="ck_rmbUser" class="check">
+                        <input type="checkbox" id="ck_rmbUser"/>
+                      Remember me
+                       
+                </label>
+            </div>
+            <div class="row">
+               <a href="javascript:login()" id="loginbtn">Log in</a>
+            </div>
+        </form>
+    </div>
+    
+</div>
+<!-- Javascript -->
+<script src="__PUBLIC__/back/js/jquery.min.js"></script>
+<script src="__PUBLIC__/back/js/supersized.3.2.7.min.js"></script>
+
+<script>
+jQuery(function($){
+
+    $.supersized({
+
+        // Functionality
+        slide_interval     : 4000,    // Length between transitions
+        transition         : 1,    // 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+        transition_speed   : 1000,    // Speed of transition
+        performance        : 1,    // 0-Normal, 1-Hybrid speed/quality, 2-Optimizes image quality, 3-Optimizes transition speed // (Only works for Firefox/IE, not Webkit)
+
+        // Size & Position
+        min_width          : 0,    // Min width allowed (in pixels)
+        min_height         : 0,    // Min height allowed (in pixels)
+        vertical_center    : 1,    // Vertically center background
+        horizontal_center  : 1,    // Horizontally center background
+        fit_always         : 0,    // Image will never exceed browser width or height (Ignores min. dimensions)
+        fit_portrait       : 1,    // Portrait images will not exceed browser height
+        fit_landscape      : 0,    // Landscape images will not exceed browser width
+
+        // Components
+        slide_links        : 'blank',    // Individual links for each slide (Options: false, 'num', 'name', 'blank')
+        slides             : [    // Slideshow Images
+                                 {image : '__PUBLIC__/back/images/backgrounds/1.jpg'},
+                                 {image : '__PUBLIC__/back/images/backgrounds/2.jpg'},
+                                 {image : '__PUBLIC__/back/images/backgrounds/3.jpg'}
+                             ]
+
+    });
+
+});
+
+</script>
+<script type="text/javascript" src="__PUBLIC__/back/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="__PUBLIC__/back/js/loginshow.js"></script>
+<script>
+//记住用户名密码功能
+$(document).ready(function(){
+    //实现 “下次自动登录” 记住用户名密码功能
+    if ($.cookie("rmbUser") == "true") {
+        $("#ck_rmbUser").attr("checked", true);
+        $("#txtName").val($.cookie("txtName"));
+        $("#txtPwd").val($.cookie("txtPwd"));
+    }
+});
+function login() {
+    //记住用户名密码
+    if ($("#ck_rmbUser").attr("checked")) {
+        var str_username = $("#txtName").val();
+        var str_password = $("#txtPwd").val();
+
+        $.cookie("rmbUser", "true", { expires: 7 }); //存储一个带7天期限的cookie
+        $.cookie("txtName", str_username, { expires: 7 });
+        $.cookie("txtPwd", str_password, { expires: 7 });
+    }
+    else {
+        $.cookie("rmbUser", "false", { expire: -1 });
+        $.cookie("txtName", "", { expires: -1 });
+        $.cookie("txtPwd", "", { expires: -1 });
+    }
+
+   //登录AJAX提示判断
+   var admin_name = $("#txtName").val();        
+   var password = $("#txtPwd").val();
+   var param = {
+    id: admin_name,
+    pwd:password
+   };
+   // console.log(data);           
+    $.ajax({
+        url: "__APP__/Admin/Login/doLogin",
+        type: "post",
+        dataType: 'json',
+        data: param,
+        error:function(){
+            alert("当前ajax操作出错！");
+        },
+        success:function(data){
+            if(data=='success')
+            {   
+                alert("登陆成功");
+                //window.location.href="__APP__/Home/Thesis/login_show";
+                window.location.href="__APP__/Admin/Index/index_show1";
+            }
+            else{
+                $("#suggest").html(data);
+            }
+        }
+    })
+}
+
+</script>
+</body>
+
+</html>
+

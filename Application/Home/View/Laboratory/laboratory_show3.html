@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>华中农业大学作物学实验教学中心</title>
+  <link type="text/css" rel="stylesheet" href='http://fonts.googleapis.com/css?family=Ubuntu:300italic,300,700' />
+  <link rel="shortcut icon" href="__ROOT__/logo.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="__PUBLIC__/face/css/home_public.css" />
+  <link rel="stylesheet" href="__PUBLIC__/face/css/show_public.css" />
+  <link rel="stylesheet" href="__PUBLIC__/Css/bootstrap.css"/>
+  <script type="text/javascript" src="__PUBLIC__/public/js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<div id="wrapper">
+  
+  <!--************************************************************** header **************************************************************-->
+  <div id="header"> 
+    <include file="./Application/Home/View/Public/header.html" />
+  </div>
+
+  <!--**************************************************************   nav  **************************************************************-->
+  <div id="nav">
+    <include file="./Application/Home/View/Public/nav.html" />
+  </div>
+  
+   <!--**************************************************************  main **************************************************************-->
+  <div id="main">
+    <div class="container">
+      <div id="blank"></div>
+      <div id="main_nav">
+        <section>
+          <h3>开放实验室</h3>
+          <ul class="ultop">
+            <li><a href="__APP__/Home/Laboratory/laboratory_show1">申报说明</a></li>
+            <li><a href="__APP__/Home/Laboratory/laboratory_show2">运行项目</a></li>
+            <li><a href="__APP__/Home/Laboratory/laboratory_show3" style="border-left: 3px solid orange;">项目申请</a></li>
+            <li><a href="__APP__/Home/Laboratory/laboratory_show4">项目成果</a></li>
+          </ul>
+        </section>
+      </div>
+      <div id="main_right">
+        <nav class="top_nav"><a href="__APP__/home/Index/index.html">首页</a> · <a href="#">开放实验室</a> · <a href="#">项目申请</a></nav>
+        <header class="main_title"><h2>项目申请</h2></header>
+        <p class='tip'>* 请下载并填写该表后提交 <a href=""> 点击下载模板</a></p>
+        <form action="" class="project_box">
+          <p><span>申请人姓名:</span><input type="text"></p>
+          <p><span>所在学院:</span><input type="text"></p>
+          <p><span>年级专业:</span><input type="text"></p>
+          <p><span>联系电话:</span><input type="text"></p>
+          <p><span>电子邮箱:</span><input type="text"></p>
+          <p><span>项目名称:</span><input type="text"></p>
+          <p class="profile"><input type="file"><input type="submit" value="提交"></p>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  
+   <!--************************************************************** footer **************************************************************-->
+  <div id="footer">
+     <include file="./Application/Home/View/Public/footer.html" />
+  </div>
+</div>
+  <script type="text/javascript" src="__PUBLIC__/face/js/jquery_homepage.js"></script>
+</body>
+</html>

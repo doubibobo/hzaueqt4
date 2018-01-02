@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>华中农业大学作物学实验教学中心</title>
+
+    <link rel="shortcut icon" href="__ROOT__/back.ico" type="image/x-icon" />
+    <!-- Bootstrap -->
+    <link href="__PUBLIC__/back/include/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 图标引入 -->
+    <link href="__PUBLIC__/back/include/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- to DO list的对勾 -->
+    <link href="__PUBLIC__/back/include/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="__PUBLIC__/back/include/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="__PUBLIC__/back/css/custom.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/back/css/public.css" rel="stylesheet" >
+</head>
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <!--************************************************* 左导航 *************************************************-->
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            
+        <!-- 左导航中部 -->
+            <include file="./Application/Admin/View/Public/nav_header.html" />
+              <br />
+
+              <!-- 左导航中部 -->
+            <include file="./Application/Admin/View/Public/nav_middle.html" />
+
+              <!--  左导航底部 -->
+              <include file="./Application/Admin/View/Public/nav_footer.html" />
+
+          </div>
+        </div>
+
+        <!--************************************************* 顶导航 *************************************************-->
+        <include file="./Application/Admin/View/Public/top_nav.html" />
+      
+
+        <!--************************************************* 左内容 *************************************************-->
+        <div class="right_col" role="main">
+           <a class="aback_hand" onclick="history.go(-1)"><i class="fa fa-reply-all" style="font-size:20px;margin:0 5px 10px 8px;"></i>返回上一步</a>
+          <div class="col-md-12 col-sm-6 col-xs-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2>这写项目名称 <small>Running Project</small></h2>
+                <ul class="nav navbar-right panel_toolbox">                            
+                  <li class="panel_toolbox_li"><a class="close-link"><i class="fa fa-close"></i></a>
+                  </li>
+                  <li class="panel_toolbox_li"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                  </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+                 
+
+                <form action="" class="project_box">
+                  <p><span>申请人姓名:</span>白天宇</p>
+                  <p><span>所在学院:</span>信息学院</p>
+                  <p><span>年级专业:</span>计科1502</p>
+                  <p><span>联系电话:</span>6666666666</p>
+                  <p><span>电子邮箱:</span>666666666666</p>
+                  <p><span>项目名称:</span>66666666666</p>
+             
+                </form>
+                <p class='tip'><a href=""> 下载上传模板</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="">删除该项目</a></p>
+                
+              </div>
+            </div>
+          </div>
+
+        
+        </div>
+
+        <!--************************************************* 底部版权 *************************************************-->
+        <include file="./Application/Admin/View/Public/footer.html" />
+
+      </div>
+    </div>
+
+  <!--************************************************* publc JS *************************************************-->
+  <include file="./Application/Admin/View/Public/public_js.html" />
+   
+  
+  </body>
+</html>

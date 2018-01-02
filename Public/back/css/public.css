@@ -1,0 +1,217 @@
+
+/************************************（实验教学：课程安排） style************************************/
+/*样式覆盖*/
+.myinflue .row .col-sm-6{
+	width:39%;
+}
+/************************************（校内外链接） Links style************************************/
+.link_name,
+.link_link{
+	border-radius: 2px;
+	border: 1px solid #73879c;
+	height: 26px;
+	padding-left: 8px;
+}
+.link_name{
+	width: 22%;
+	margin-right: 15px;
+}
+.link_link{
+	width: 45%;
+	margin-right: 25px;
+}
+.link_submit{
+	border: 1px solid #359fee;
+	height: 25px;
+	padding: 0 10px;
+	background: #2095df;
+	color: #fff;
+	border-radius: 3px;
+}
+.link_submit:hover{
+	background: #e54724;
+	border: 1px solid #e54724;
+	-webkit-transition: all 0.6s;
+	-moz-transition: all 0.6s;
+	-ms-transition: all 0.6s;
+	-o-transition: all 0.6s;
+	transition: all 0.6s;
+}
+/************************************（图片轮播）添加文章标题内容 style************************************/
+.gallery_title{	
+	height: 25px;
+	padding: 0 10px;	
+}
+.gallery_title,
+.gallery_textarea{
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	margin: 0 0 10px 0;
+	width: 100%;
+}
+.gallery_add{
+	color: #fff;
+	background: #26b99a;
+	position: absolute;
+	right: 30px;
+	bottom:7px;
+	width: 65px;
+	border-radius: 30px;
+	text-align: center;
+	height: 30px;
+	line-height: 30px;
+	border: 1px solid #169f85;
+	font-weight: 400;
+	font-size: 14px;
+}
+.gallery_add:hover{
+	cursor: pointer;
+	background: #d9534f;
+	border: 1px solid #d43f3a;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+/************************************（成果展示）无标题无文字内容的图片上传 style************************************/
+.thumbnail2 {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: block;
+    line-height: 1.42857;
+    margin-bottom: 20px;
+    padding: 4px;
+    transition: border 0.2s ease-in-out 0s;
+}
+.ye{
+	float: right;
+}
+.file_input_pot{
+	position: relative;
+	left: 15px;
+	bottom: 15px;
+	float: left;
+}
+/************************************（美图欣赏）有标题无文字内容的图片上传 style************************************/
+.file_input_pot form{
+	width: 120%;
+	display: block;
+	clear: both;
+}
+.file_input_pot form .file {
+	margin-bottom: 5px;
+}
+.mycaption{
+	background: #f7f7f7;
+	height: 32%;
+	padding: 10px;
+	overflow: hidden;
+}
+.mycaption p{
+	text-align: center;	
+}
+.letitle{
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	margin: 2px 0 5px 0;
+	padding: 0 0 0 5px;
+	width: 60%;
+}
+.leselect{
+	margin: 0 0 0 15px;
+}
+/************************************（下载专区）下载文件上传表格 style************************************/
+.table_form input[type="file"],
+.table_form input[type="submit"]{
+	float: left;
+}
+
+/************************************（机构设置、团队建设、课程安排）table的input style************************************/
+.EduForm input[type="text"],
+.OrgtableForm input[type="text"],
+.Teamtableform input[type="text"]{
+	border: 1px solid #ccc;
+	border-radius: 2px;	
+	padding: 3px 0 3px 5px;
+}
+.OrgtableForm input[type="text"],
+.Teamtableform input[type="text"]{
+	margin: 0 5px 0 0;
+	width: 40%;
+}
+.EduForm input[type="text"]{
+	margin: 0 5px 10px 0;
+	width: 70%;
+}
+
+/************************************（在授课程:具体课程里的左导航）nav_middle style************************************/
+.aback_hand:hover{
+	cursor: pointer;
+}
+.nav_middel_title h3{
+	font-size: 18px;
+	color: #ccc;
+}
+.nav_middel_title a{
+	color: #fff;
+	font-size: 13px;
+	padding-left: 48%;
+	display: block;
+	margin: 10px 0 0 0;
+}
+.nav_middel_title a:hover{
+	text-decoration: underline;
+}
+/************************************（在授课程:相关视频）操作块 style************************************/
+.opvoid{
+	width: 100%;
+	clear: both;
+}
+.opvoid strong{
+	float: left;
+}
+/************************************课程添加的表格样式************************************/
+.EduForm .select {
+	width: 200px;
+	height: 30px;
+	    border: 1px solid #ccc
+}
+
+
+.tip{
+	padding: 6px 0;
+	float: left;
+	color: red;
+	font-size: 16px;
+}
+.tip a{
+	text-decoration: underline;
+}
+.project_box{
+	float: left;
+	width: 100%;
+}
+.project_box p{
+	padding: 6px 0;
+}
+.project_box span,
+.project_box input[type='text']{
+	height: 28px;
+	line-height: 28px;
+}
+.project_box span{
+	display: inline-block;
+	padding: 3px 5px 3px 25px;
+	background: url(../../face/images/dot_hover.png) no-repeat 0 9px;
+}
+.project_box input[type='text']{
+	float: right;
+	margin-right: 40%;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	width: 45%;
+	padding-left: 5px;
+}

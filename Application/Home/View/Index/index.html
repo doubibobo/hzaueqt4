@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+ 	<meta charset="UTF-8">
+ 	<!-- <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" /> -->
+ 	<title>华中农业大学作物学实验教学中心</title>
+ 	<link type="text/css" rel="stylesheet" href='http://fonts.googleapis.com/css?family=Ubuntu:300italic,300,700' />
+  <link rel="shortcut icon" href="__ROOT__/logo.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="__PUBLIC__/face/css/home_public.css" />
+ 	<link rel="stylesheet" href="__PUBLIC__/face/css/index.css"  />
+  <script type="text/javascript" src="__PUBLIC__/public/js/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="__PUBLIC__/face/js/AC_RunActiveContent.js"></script><!--js特效的播放器插件检测-->
+</head>
+<body>
+<div id="wrapper">
+<div id="bdy">
+    <!--************************************************************** header **************************************************************-->
+  <div id="header"> 
+    <include file="./Application/Home/View/Public/header.html" />
+  </div>
+
+  <!--**************************************************************   nav  **************************************************************-->
+  <div id="nav">
+    <include file="./Application/Home/View/Public/nav.html" />
+  </div>
+  
+  <!--**************************************************************main-one**************************************************************-->
+  <div id="main-one">
+    <div class="container">
+      <!--***************左侧***************-->
+      <div id="featured_slide">
+        <ul>
+          <volist name = "data1" id = "vo">
+            <li><img src="__ROOT__/Uploads/<{$vo.imgadd}>" alt="" />
+              <div class="panel-overlay">
+                <h2><{$vo.imgname}></h2>
+                <p><{$vo.imgintro}> <a href="__URL__/pictureshow/id/<{$vo.id}>">更多 &raquo;</a></p>
+              </div>
+            </li>
+          </volist>
+        </ul>
+      </div>
+       <!--***************右侧***************-->
+      <div id="main-one-right">
+      <volist name = "data2" id = "vo">
+        <div id="welcome">
+          <div class="welcome_pit"><img class="imgl" src="__ROOT__/Uploads/<{$vo.imgadd}>" alt="" /></div>
+          <div class="welcome_main">
+            <div class="title_box">
+              <h2 class="title">欢迎关注</h2><i>WELCOME</i>
+            </div>
+            <p><{$vo.imgintro}></p>
+            <span><a href="__APP__/Home/About/about_show1">更多&raquo;</a></span>
+          </div>
+        </div>
+      </volist>
+        <div id="main_notice">
+          <div class="title_box">
+            <h2 class="title">通知公告</h2><i>NOTICE</i><a href="__APP__/Home/index/notice"><b>MORE</b></a>
+          </div>
+          <ul>
+            <volist offset='0' length = '4' name = "data" id = "vo">
+              <li><a href="__URL__/itemsInfor/id/<{$vo.id}>"><{$vo.inforname}><span>&raquo;</span></a></li>
+            </volist>
+          </ul>
+        </div>
+      </div>     
+    </div>
+  </div>
+
+  <!--**************************************************************main-two**************************************************************-->
+  <div id="main-two">
+    <div class="container">
+      <!--***************中心动态***************-->
+      <div id="latestnews">
+        <div class="title_box">
+          <h2 class="title">中心动态</h2><i>NEWS</i><a href="__APP__/Home/Education/education_show1"><b>MORE</b></a>
+        </div>
+        <ul>
+          <volist offset='0' length = '3' name = "data6" id = "vo">
+            <li>
+              <p ><strong><{$vo.r_name}></strong></p>
+              <div class="center_text"><{$vo.r_content}></p></div>
+              <p class="readmore"><a href="__APP__/Home/Education/education_show1_article/id/<{$vo.id}>">浏览全文 &raquo;</a></p>
+            </li>
+          </volist>
+        </ul>
+      </div>
+      <!--***************快速导航***************-->
+      <div id="quicklinks">
+        <div class="title_box">
+          <h2 class="title">快速导航</h2><i>NAVIGATION</i>
+        </div>
+        <ul>
+          <li>
+            <p><a href="#">查询预约 <img src="__PUBLIC__/face/images/NAVIGATION1.jpg" alt="" /></a></p>
+          </li>
+           <li class="last">
+            <p><a href="__APP__/Home/Other/other_show3">下载专区 <img src="__PUBLIC__/face/images/NAVIGATION4.png" alt="" /></a></p>
+          </li>
+        <!--   <li>
+            <p><a href="#">在线测评 <img src="__PUBLIC__/face/images/NAVIGATION2.jpg" alt="" /></a></p>
+          </li> -->
+          <li>
+            <p><a href="#">文档提交 <img src="__PUBLIC__/face/images/NAVIGATION3.png" alt="" /></a></p>
+          </li>
+         
+        </ul>
+      </div>
+      <!--***************右侧专栏***************-->
+      <div id="column">
+        <div id="course">
+          <div class="title_box" style="margin:0 0 -10px 0;">
+            <h2 class="title">精品课程</h2><i>COURSE</i><a href="__URL__/showInfor"><b>MORE</b></a>
+          </div>
+          <!-- Begin Flash Here - This is the correct method for W3C validation -->
+         <!-- <script type="text/javascript">AC_FL_RunContent( 'type','application/x-shockwave-flash','data','http://player.youku.com/player.php/sid/XMTgwOTEwNTgzMg==/v.swf','width','300','height','250','movie','http://player.youku.com/player.php/sid/XMTgwOTEwNTgzMg==/v.swf','wmode','opaque','quality','high','bgcolor','#E9E9E9','allowfullscreen','false','allowscriptaccess','never' ); //end AC code</script>
+          <noscript>
+            <object type="application/x-shockwave-flash" data="http://player.youku.com/player.php/sid/XMTgwOTEwNTgzMg==/v.swf" width="300" height="250">
+              <param name="movie" value=    "http://player.youku.com/player.php/sid/XMTgwOTEwNTgzMg==/v.swf"  />
+              <param name="wmode" value="opaque" />
+              <param name="quality" value="high" />
+              <param name="bgcolor" value="#E9E9E9" />
+              <param name="allowfullscreen" value="false" />
+              <param name="allowscriptaccess" value="never" />
+            </object>
+          </noscript>-->
+          <!-- End Flash Here -->
+      <!--     <ul class="course_ul">
+            <li><a href="#">&raquo; 计算机科学与技术<i>刘健晓</i></a></li>
+            <li><a href="#">&raquo; C语言程序设计<i>刘健晓</i></a></li>
+            <li><a href="#">&raquo; 计算机网络技术<i>刘健晓</i></a></li>
+            
+          </ul> -->
+           <p><strong>作物栽培学</strong> （国家级）</p>
+          <p class="course_text">作物栽培学是研究作物生长发育和产量、品质形成规律及其与环境条件的关系，探索通过轮作复种、栽培管理、生长调控、优化决策等途径，实现作物高产、优质、高效及其可持续发展的理论、方法与技术的科学。</p>
+          <p class="readmore"><a href="#">现在学习 &raquo;</a></p>
+          <p><strong>作物栽培学</strong> （国家级）</p>
+          <p class="course_text">作物栽培学是研究作物生长发育和产量、品质形成规律及其与环境条件的关系，探索通过轮作复种、栽培管理、生长调控、优化决策等途径，实现作物高产、优质、高效及其可持续发展的理论、方法与技术的科学。</p>
+          <p class="readmore"><a href="#">现在学习 &raquo;</a></p>
+           <p><strong>作物栽培学</strong> （国家级）</p>
+          <p class="course_text">作物栽培学是研究作物生长发育和产量、品质形成规律及其与环境条件的关系，探索通过轮作复种、栽培管理、生长调控、优化决策等途径，实现作物高产、优质、高效及其可持续发展的理论、方法与技术的科学。</p>
+          <p class="readmore"><a href="#">现在学习 &raquo;</a></p>
+        </div>
+        <div id="resources">
+          <div class="title_box">
+            <h2 class="title">教学资源</h2><i>RESOURCES</i>
+          </div>
+          <ul>
+            <volist name="jiaoxueziyuan" id="items">
+              <php>
+                $length = strrpos($items['imgname'],',');
+                $name = substr($items['imgname'],0,$length); 
+                $type = substr($items['imgname'],$length+1); 
+              </php>
+              <li><img src="__ROOT__/Uploads/<{$items.imgadd}>" alt="image" />
+                <div class="fl_left">
+                  <p><strong><{$name}></strong></p>
+                  <p><{$type}></p>
+                  <p><a href="<{$items.imgintro}>">了解更多 &raquo;</a></p>
+                </div>
+              </li>
+            </volist>
+<!--             <li><img src="__PUBLIC__/face/images/12.jpg" alt="" />
+              <div class="fl_left">
+                <p><strong>气象万千</strong></p>
+                <p>气象学 / 生态学</p>
+                <p><a href="#">了解更多 &raquo;</a></p>
+              </div>
+            </li>
+            <li><img src="__PUBLIC__/face/images/13.jpg" alt="" />
+              <div class="fl_left">
+                <p><strong>气象万千</strong></p>
+                <p>气象学 / 生态学</p>
+                <p><a href="#">了解更多 &raquo;</a></p>
+              </div>
+            </li>
+            <li><img src="__PUBLIC__/face/images/13.jpg" alt="" />
+              <div class="fl_left">
+                <p><strong>气象万千</strong></p>
+                <p>气象学 / 生态学</p>
+                <p><a href="#">了解更多 &raquo;</a></p>
+              </div>
+            </li> -->
+             <!--  <li><img src="__PUBLIC__/face/images/13.jpg" alt="" />
+                <div class="fl_left">
+                  <p><strong>气象万千</strong></p>
+                  <p>气象学 / 生态学</p>
+                  <p><a href="#">了解更多 &raquo;</a></p>
+                </div>
+              </li> -->
+          </ul>
+        </div>
+      </div>      <!--***************成果展示,美图赏析***************-->
+      <div id="show">
+          <ul>
+            <li>
+              <div class="title_box">
+                <h2 class="title">成果展示</h2><i>ACHIEVEMENT</i><a href="__APP__/Home/Other/other_show2"><b>MORE</b></a>
+              </div>
+              <img src="__ROOT__/Uploads/<{$chengguozhanshi.imgadd}>" alt="image" />
+              <p class="show_text">Morbit incidunt maurisque eros molest nunc anteget sed vel lacus mus semper. Anter dumnullam interdum eros dui urna consequam ac nisl nullam ligula vestassa.</p>
+            
+            </li>
+            <li class="link_last">
+              <div class="title_box">
+                <h2 class="title">美图欣赏</h2><i>PICTURE</i><a href="__APP__/Home/Other/other_show4"><b>MORE</b></a>
+              </div>
+              <img src="__ROOT__/Uploads/<{$meituxinshang.imgadd}>" alt="image" />
+              <p class="show_text">Morbit incidunt maurisque eros molest nunc anteget sed vel lacus mus semper. Anter dumnullam interdum eros dui urna consequam ac nisl nullam ligula vestassa.</p>
+           
+            </li>
+          </ul>
+      </div>
+      <!--***************校内链接,校际链接***************-->
+      <div id="link">
+        <ul class="clear">
+          <li>
+            <div class="title_box">
+              <h2 class="title">校内链接</h2><i>CAMPUS LINKS</i>
+            </div>
+            <ul>
+              <volist offset='0' length = '5' name = "data3" id = "vo">
+                <li><a href="<{$vo.linkadd}>">&raquo; <{$vo.linkname}></a></li>
+              </volist>
+            </ul>
+          </li>
+          <li class="link_last">
+            <div class="title_box">
+              <h2 class="title">校际链接</h2><i>EXTERNAL LINKS</i>
+            </div>
+            <ul>
+              <volist offset='0' length = '5' name = "data4" id = "vo">
+                <li><a href="<{$vo.linkadd}>">&raquo; <{$vo.linkname}></a></li>
+              </volist>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+   <!--************************************************************** footer **************************************************************-->
+  <div id="footer">
+     <include file="./Application/Home/View/Public/footer.html" />
+  </div>
+</div>
+</div>
+  
+
+  <!-- Homepage Specific Elements -->
+  <script type="text/javascript" src="__PUBLIC__/face/js/jquery.timers.1.2.js"></script><!--计时器-->
+  <script type="text/javascript" src="__PUBLIC__/face/js/jquery.galleryview.2.1.1.min.js"></script><!--图片走廊-->
+  <script type="text/javascript" src="__PUBLIC__/face/js/jquery.galleryview.setup.js"></script><!--图片走廊基本参数-->
+  <!-- End Homepage Specific Elements -->
+  <script type="text/javascript" src="__PUBLIC__/face/js/jquery_homepage.js"></script>
+</body>
+</html>
