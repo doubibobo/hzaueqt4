@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 ﻿<?php
-=======
-<?php
->>>>>>> 5972c8843d2b8b5051d93fcc9b87f3a8ff41c834
+
 // +----------------------------------------------------------------------
 // | ThinkPHP [ WE CAN DO IT JUST THINK ]
 // +----------------------------------------------------------------------
@@ -19,11 +16,10 @@
 if(version_compare(PHP_VERSION,'5.3.0','<'))  die('require PHP > 5.3.0 !');
 
 // 开启调试模式 建议开发阶段开启 部署阶段注释或者设为false
-<<<<<<< HEAD
+
  define('APP_DEBUG',True);
-=======
-// define('APP_DEBUG',False);
->>>>>>> 5972c8843d2b8b5051d93fcc9b87f3a8ff41c834
+
+
 
 // 定义应用目录
 define('APP_PATH','./Application/');
