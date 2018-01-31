@@ -32,21 +32,21 @@
           <ul class="ultop">
             <li><a href="__APP__/Home/Education/education_show1">教学动态</a></li>
             <li><a href="__APP__/Home/Education/education_show2">教学体系</a></li>
-            <li><a href="__APP__/Home/Education/education_show3" style="border-left: 3px solid orange;">课程安排</a>
-<!--                 <ul>
+            <!--<li><a href="__APP__/Home/Education/education_show3" style="border-left: 3px solid orange;">课程安排</a>-->
+<!--&lt;!&ndash;                 <ul>-->
+                  <!--<li><a href="#">教学动态</a></li>-->
+                  <!--<li><a href="#">教学体系</a></li>-->
+                  <!--<li><a href="#">课程安排</a></li>-->
+                  <!--<li><a href="#">在授课程</a></li>-->
+                <!--</ul> &ndash;&gt;-->
+            <!--</li>-->
+            <li><a href="__APP__/Home/Education/education_show3">在授课程</a>
+                <ul>
                   <li><a href="#">教学动态</a></li>
                   <li><a href="#">教学体系</a></li>
                   <li><a href="#">课程安排</a></li>
                   <li><a href="#">在授课程</a></li>
-                </ul> -->
-            </li>
-<!--             <li><a href="__APP__/Home/Education/education_show4">在授课程</a> -->
-<!--                 <ul>
-                  <li><a href="#">教学动态</a></li>
-                  <li><a href="#">教学体系</a></li>
-                  <li><a href="#">课程安排</a></li>
-                  <li><a href="#">在授课程</a></li>
-                </ul> -->
+                </ul>
             </li>
           </ul>
         </section>
@@ -55,7 +55,7 @@
         <nav class="top_nav"><a href="__APP__/Home/Index/index.html">首页</a> · <a href="#">实验教学</a> · <a href="#">课程安排</a></nav>
         <header class="main_title"><h2>课程安排</h2></header>
         <section class="main_list">
-            <div class="list_title_two">试验区课表</div>
+            <!--<div class="list_title_two">试验区课表</div>-->
             <div class="list_con_two">
               <volist name="shiyanqu" id="vo">
                 <div class="list_con_title"><{$vo.t_name}></div>
@@ -64,15 +64,15 @@
                   </volist>
               </volist>
             </div>
-            <div class="list_title_two">课程课表</div>
-            <div class="list_con_two">
-              <volist name="kechengkebiao" id="items">
-                <div class="list_con_title"><{$items.t_name}></div>
-                  <volist name="vo['allCourses']" id="items">
-                    <a href="__APP__/Home/Course/course_show1/id/<{$items.id}>"><{$items.c_name}></a>
-                  </volist>
-              </volist>
-            </div>
+            <!--<div class="list_title_two">课程课表</div>-->
+            <!--<div class="list_con_two">-->
+              <!--<volist name="kechengkebiao" id="items">-->
+                <!--<div class="list_con_title"><{$items.t_name}></div>-->
+                  <!--<volist name="vo['allCourses']" id="items">-->
+                    <!--<a href="__APP__/Home/Course/course_show1/id/<{$items.id}>"><{$items.c_name}></a>-->
+                  <!--</volist>-->
+              <!--</volist>-->
+            <!--</div>-->
         </section>
       </div>
     </div>

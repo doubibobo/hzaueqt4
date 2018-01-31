@@ -88,7 +88,7 @@ class IndexController extends Controller {
 	public function notice($value='')
 	{
 		$model = new InformationModel();
-        $Page = new \Think\Page($model -> getInformationCount($id), 10);
+        $Page = new \Think\Page($model -> getInformationCount(), 10);
         $show = $Page->show();// 分页显示输出
         $pre = $Page -> firstRow;
         $next = $Page -> listRows;

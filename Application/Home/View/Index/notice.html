@@ -38,10 +38,19 @@
       <div id="main_right">
         <nav class="top_nav"><a href="__APP__/home/Index/index.html">首页</a> · <a href="#">中心概况</a> · <a href="#">通知公告</a> · <a href="#"><{$data.inforname}></a></nav>
         <header class="main_title"><h2><{$data.inforname}></h2></header>
-        <section class="article">
-          <p class="contantdis">
-            <{$data.inforcnt}>
-          </p>
+        <section class="main_list">
+          <ul class="show_list">
+            <volist name="data" id="vo">
+              <li><a href="__URL__/itemsInfor/id/<{$vo.id}>"><{$vo.inforname}></a><span><{$vo.infortime}></span></li>
+            </volist>
+          </ul>
+          <div>
+            <nav style="text-align:center;" >
+              <ul class="pagination">
+                <{$show}>
+              </ul>
+            </nav>
+          </div>
         </section>
       </div>
     </div>
